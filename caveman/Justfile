@@ -8,16 +8,16 @@ run:
   clojure -M -m example.main
 
 nrepl:
-  clojure -M:repl/nrepl
+  clojure -M:dev:repl/nrepl
 
 conjure:
-  clojure -M:repl/conjure
+  clojure -M:dev:repl/conjure
 
 rebel:
-  clojure -M:repl/rebel
+  clojure -M:dev:repl/rebel
 
 nrebel:
-  clojure -M:repl/nrebel
+  clojure -M:dev:repl/nrebel
 
 check *FLAGS:
   clojure -T:cljfmt check -- {{FLAGS}}
