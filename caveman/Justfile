@@ -1,6 +1,26 @@
+alias repl := nrepl
+
 # Shows available recipes
 help:
   just --list
 
 run:
   clojure -M -m example.main
+
+nrepl:
+  clojure -M:repl/nrepl
+
+conjure:
+  clojure -M:repl/conjure
+
+rebel:
+  clojure -M:repl/rebel
+
+nrebel:
+  clojure -M:repl/nrebel
+
+check *FLAGS:
+  clojure -T:cljfmt check -- {{FLAGS}}
+
+fix *FLAGS: 
+  clojure -T:cljfmt fix -- {{FLAGS}}
