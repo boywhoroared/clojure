@@ -1,5 +1,6 @@
 (ns example.routes
-  (:require [reitit.ring :as reitit-ring]))
+  (:require [reitit.ring :as reitit-ring]
+            [clojure.tools.logging :as log]))
 
 (defn hello-handler [system request]
   {:status 200
@@ -36,6 +37,7 @@
 
 (defn root-handler
   [system request]
+  (log/info (str (:request-method request) " - " (:uri request)))
   (let [handler (reitit-ring/ring-handler
                  (reitit-ring/router (routes system)) #'not-found-handler)] ; `(reitit-ring/ringer-handler router default-handler)
     (handler request)))
