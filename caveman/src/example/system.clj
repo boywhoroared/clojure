@@ -6,8 +6,9 @@
 ;; This file is where put all the "stateful" things like database connections
 ;; and clients to external services.
 
-(defn start-server "Starts the Jetty server" []
-  (jetty/run-jetty #'routes/handler {:port 9999 :join? false})) ; `:join? false` configures the server to run in the background.
+(defn start-server [system] "Starts the Jetty server" []
+  (jetty/run-jetty (partial #'routes/root-handler system) {:port 9999 :join? false}))
+; `:join? false` configures the server to run in the background.
 
 ;; See 
 ;; - <https://github.com/ring-clojure/ring/wiki/Getting-Started>
@@ -16,10 +17,16 @@
 (defn stop-server "Stops the Jetty server" [server]
   (Server/.stop server))
 
-(defn start-system []
-  {::server (start-server)})
+;; `server` is one of the components/services in `system` but `server`
+;; itself needs access to `system` (circular dependendy?), so we 
+;; created a symbol to represent a "system" that is "everything minus the server":
+;; `system-so-far`.
 
-; Presumably, `start-server` returns an expr that evaluates to a Server instance?
+(defn start-system []
+  (let [system-so-far {}]
+    {::server (start-server system-so-far)}))
+
+; `start-server` returns an expr that evaluates to a Server instance
 ; And we store the reference to this instance in state
 ; This state will be initialied by `start-system`
 
