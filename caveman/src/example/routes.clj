@@ -21,6 +21,19 @@
   [["/"   {:get {:handler (partial #'hello-handler system)}}]
    ["/goodbye"   {:get {:handler (partial #'goodbye-handler system)}}]])
 
+;; We're using var references to the handler functions. 
+;; <https://clojure.org/guides/weird_characters#_var_quote>
+;; 
+;; var quote is a reader macro that expands to (var x).
+;; See <https://clojuredocs.org/clojure.core/var>
+;;
+;; That is, we're passing the symbol references
+;; not the actual function values. The router will deference these to invoke the function.
+
+;; See: <https://cljdoc.org/d/metosin/reitit/0.9.1/doc/advanced/dev-workflow?q=reload#var-handlers>
+
+;; In development, it allows us to modify the handler without rebuilding the routes
+
 (defn root-handler
   [system request]
   (let [handler (reitit-ring/ring-handler
