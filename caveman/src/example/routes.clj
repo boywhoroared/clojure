@@ -1,19 +1,28 @@
 (ns example.routes
   (:require [reitit.ring :as reitit-ring]
-            [clojure.tools.logging :as log]))
+            [clojure.tools.logging :as log]
+            [hiccup2.core :as hiccup]))
 
 (defn hello-handler [system request]
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body "Hello, world"})
+   :body (str (hiccup/html
+               [:html
+                [:body
+                 [:h1 "Hello, world"]]]))})
 
 (defn goodbye-handler [system request]
-  {:status 200 :headers {"Content-Type" "text/html"} :body "Goodbye, world!"})
+  {:status 200
+   :headers {"Content-Type" "text/html"}
+   :body (str (hiccup/html
+               [:html
+                [:body
+                 [:h1  "Goodbye, world!"]]]))})
 
 ;; Unlike the other handlers, we're not passing `system` here.
 ;; At first, I incorrectly had `system` as a paramater, so I got an `ArityException`
 (defn not-found-handler [_request]
-  {:status 400 :headers {"Content-Type" "text/html"} :body "Not Found"})
+  {:status 400 :headers {"Content-Type" "text/html"} :body (str (hiccup/html [:html [:body [:h1 "Not Found"]]]))})
 
 ;; Forward `system` to the handlers. Basically dependency injection.
 ;; We do this because system is how we get access to the database client.
