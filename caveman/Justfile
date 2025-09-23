@@ -22,5 +22,9 @@ nrebel *FLAGS:
 check:
   clojure -T:cljfmt check src dev
 
-fix *FLAGS: 
+fix: 
   clojure -T:cljfmt fix src dev
+
+# Adding '-' before the command ignores error exit codes
+lint:
+  -clojure -M:lint -m clj.kondo.main --lint .

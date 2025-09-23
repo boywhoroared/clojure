@@ -22,7 +22,8 @@
                          :main-opts ["-m" "rebel-readline.nrepl.main"]
                          :extra-paths ["dev"]}
            :cljfmt {:extra-deps {io.github.weavejester/cljfmt {:git/tag "0.13.1" :git/sha "7de2860"}}
-                    :ns-default cljfmt.tool}}
+                    :ns-default cljfmt.tool}
+           :lint {:deps {clj-kondo/clj-kondo {:mvn/version "2025.09.22"}} :main-opts ["-m" "clj-kondo.main"]}}
  :deps {org.clojure/clojure {:mvn/version "1.12.2"}
         ring/ring {:mvn/version "1.13.0"}
         metosin/reitit-ring {:mvn/version "0.9.1"}
