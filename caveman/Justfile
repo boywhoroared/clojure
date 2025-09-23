@@ -19,8 +19,8 @@ rebel:
 nrebel *FLAGS: 
   clojure -M:dev:repl/nrebel -p {{read(".nrepl-port")}} {{FLAGS}}
 
-check *FLAGS:
-  clojure -T:cljfmt check -- {{FLAGS}}
+check:
+  clojure -T:cljfmt check src dev
 
 fix *FLAGS: 
-  clojure -T:cljfmt fix -- {{FLAGS}}
+  clojure -T:cljfmt fix src dev
