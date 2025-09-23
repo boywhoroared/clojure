@@ -3,10 +3,14 @@
             [example.routes :as routes])
   (:import (org.eclipse.jetty.server Server)))
 
+;; Fixes linting error because we're using Java interop
+;; (We import the class `org.eclipse.jetty.server.Server` and we invoke a Java class method in `stop-server`)
+(set! *warn-on-reflection* true)
+
 ;; This file is where put all the "stateful" things like database connections
 ;; and clients to external services.
 
-(defn start-server [system] "Starts the Jetty server" []
+(defn start-server "Starts the Jetty server" [system]
   (jetty/run-jetty (partial #'routes/root-handler system) {:port 9999 :join? false}))
 ; `:join? false` configures the server to run in the background.
 

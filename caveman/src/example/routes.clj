@@ -3,7 +3,7 @@
             [clojure.tools.logging :as log]
             [hiccup2.core :as hiccup]))
 
-(defn hello-handler [system request]
+(defn hello-handler [_system _request] ; Prefixing a parameter with underscore, or simply using an underscore as the name, is a convention that indicates the parameter is unused.
   {:status 200
    :headers {"Content-Type" "text/html"}
    :body (str (hiccup/html
@@ -11,7 +11,7 @@
                 [:body
                  [:h1 "Hello, world"]]]))})
 
-(defn goodbye-handler [system request]
+(defn goodbye-handler [_system _request]
   {:status 200
    :headers {"Content-Type" "text/html"}
    :body (str (hiccup/html
