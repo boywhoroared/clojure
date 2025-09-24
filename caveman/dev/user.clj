@@ -44,10 +44,13 @@
 
 (defn server [] (::system/server system))
 
+(defn db [] (::system/db system))
+
 (comment
   (require '[clojure.repl :refer [doc, source, dir, apropos]])
   (require '[clojure.tools.namespace.repl :refer [refresh]])
   (refresh)
   (start-system!)
   (stop-system!)
-  (restart-system!))
+  (restart-system!)
+  (prn (::system/server system)))

@@ -1,15 +1,32 @@
 (ns example.routes
   (:require [reitit.ring :as reitit-ring]
-            [clojure.tools.logging :as log]
-            [hiccup2.core :as hiccup]))
+            ; To get access parts of the system, we use an `:as-alias` require in our routes
+            ; along with destructuring. If we didn't use `:as-alias` then there would be circular 
+            ; namespace dependencies, which is no good.
+            ; Not having the alias at all would be cumbersome as well.
 
-(defn hello-handler [_system _request] ; Prefixing a parameter with underscore, or simply using an underscore as the name, is a convention that indicates the parameter is unused.
-  {:status 200
-   :headers {"Content-Type" "text/html"}
-   :body (str (hiccup/html
-               [:html
-                [:body
-                 [:h1 "Hello, world"]]]))})
+            ; as-alias creates an alias for the ns without actually loading it. 
+            ; This is particularly useful when you want to refer to a namespace
+            ; symbolically (e.g. qualified/namespaced keywords)
+            [example.system :as-alias system]
+            [clojure.tools.logging :as log]
+            [hiccup2.core :as hiccup]
+            [next.jdbc :as jdbc]))
+
+;; Destructures (associative destructuring) the `system` argument (namespaced keyword)
+;; such that the value is bound to the local name part of the key and drops the namespace.
+;; That is, `example.system/db` will be bound locally to `db`
+;; See:
+;; - <https://clojure.org/guides/destructuring#_associative_destructuring>
+;; - <https://clojure.org/guides/destructuring#_namespaced_keywords>
+(defn hello-handler [{::system/keys [db]} _request] ; Prefixing a parameter with underscore, or simply using an underscore as the name, is a convention that indicates the parameter is unused.
+  (let [{:keys [planet]} (jdbc/execute-one! db ["select 'earth' as planet"])]
+    {:status 200
+     :headers {"Content-Type" "text/html"}
+     :body (str (hiccup/html
+                 [:html
+                  [:body
+                   [:h1 "Hello, " planet]]]))}))
 
 (defn goodbye-handler [_system _request]
   {:status 200
