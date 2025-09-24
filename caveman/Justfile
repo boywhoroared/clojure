@@ -20,11 +20,14 @@ nrebel *FLAGS:
   clojure -M:dev:repl/nrebel -p {{read(".nrepl-port")}} {{FLAGS}}
 
 check:
-  clojure -T:cljfmt check src dev
+  clojure -T:cljfmt check src dev test
 
 fix: 
-  clojure -T:cljfmt fix src dev
+  clojure -T:cljfmt fix src dev test
 
 # Adding '-' before the command ignores error exit codes
 lint:
   -clojure -M:lint -m clj.kondo.main --lint .
+
+test:
+  -clojure -M:dev -m kaocha.runner
