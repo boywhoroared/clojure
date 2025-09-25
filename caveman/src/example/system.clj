@@ -3,26 +3,34 @@
             [next.jdbc.connection :as connection]
             [example.routes :as routes])
   (:import (org.eclipse.jetty.server Server)
-           (com.zaxxer.hikari HikariDataSource)))
+           (com.zaxxer.hikari HikariDataSource)
+           (io.github.cdimascio.dotenv Dotenv))) ; we are using this because it's more well maintained than its Clojure equivalents
+                                                 ; If there is a library you prefer, use it.
 
 ;; Fixes linting error because we're using Java interop
 ;; (We import the class `org.eclipse.jetty.server.Server` and we invoke a Java class method in `stop-server`)
 (set! *warn-on-reflection* true)
 
+(defn start-env []
+  (Dotenv/load))
+
 ;; This file is where put all the "stateful" things like database connections
 ;; and clients to external services.
 
-(defn start-db []
+(defn start-db [{::keys [env]}]
   (connection/->pool HikariDataSource ; more Java interop
                      {:dbtype "postgres"
                       :dbname "postgres"
-                      :username "postgres"
-                      :password "postgres"})) ; Shouldn't we pull this from a .env?
+                      :username (Dotenv/.get env "POSTGRES_USERNAME")
+                      :password (Dotenv/.get env "POSTGRES_PASSWORD")}))
 (defn stop-db [db]
   (HikariDataSource/.close db)) ; Java interop
 
-(defn start-server "Starts the Jetty server" [system]
-  (jetty/run-jetty (partial #'routes/root-handler system) {:port 9999 :join? false}))
+(defn start-server "Starts the Jetty server" [{::keys [env] :as system}]
+  (jetty/run-jetty
+   (partial #'routes/root-handler system)
+   {:port (Long/parseLong (Dotenv/.get env "PORT"))
+    :join? false}))
 ; `:join? false` configures the server to run in the background.
 
 ;; See 
@@ -38,8 +46,15 @@
 ;; `system-so-far`.
 
 (defn start-system []
-  (let [system-so-far {::db (start-db)}]
+  (let [system-so-far {::env (start-env)}
+        system-so-far (merge system-so-far {::db (start-db system-so-far)})]
     (merge system-so-far {::server (start-server system-so-far)})))
+
+; We can't set all the map keys at once because `start-db` and `start-server` have to be passed the system map
+; So we incrementally build up the system using `system-so-far`
+; We add the env first, because the DB needs the env variables
+; Then we connect to the DB because the server routes will use the DB
+; Finally we start the http server
 
 ; `start-server` returns an expr that evaluates to a Server instance
 ; And we store the reference to this instance in state

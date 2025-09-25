@@ -20,6 +20,8 @@
 (ns user
   (:require [example.system :as system]))
 
+(set! *warn-on-reflection* true)
+
 (def system nil)
 
 (defn start-system! "Start the system if not already started" []
@@ -42,9 +44,14 @@
   (stop-system!)
   (start-system!))
 
-(defn server [] (::system/server system))
+(defn server []
+  (::system/server system))
 
-(defn db [] (::system/db system))
+(defn db []
+  (::system/db system))
+
+(defn env []
+  (::system/env system))
 
 (comment
   (require '[clojure.repl :refer [doc, source, dir, apropos]])

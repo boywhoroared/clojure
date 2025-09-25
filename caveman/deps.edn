@@ -41,5 +41,6 @@
         org.postgresql/postgresql {:mvn/version "42.7.7"} ; Postgres Driver
         ;; HikariCP is a JDBC connection pool. We use this so that we don't need to establish a 
         ;; completely fresh connection on each database query
-        com.zaxxer/HikariCP {:mvn/version "6.0.0"}}}
+        com.zaxxer/HikariCP {:mvn/version "6.0.0"}
+        io.github.cdimascio/dotenv-java {:mvn/version "3.0.2"}}}
 
