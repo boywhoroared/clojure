@@ -1,5 +1,6 @@
 (ns example.cave.routes
-  (:require [hiccup2.core :as hiccup]))
+  (:require [hiccup2.core :as hiccup]
+            [example.middleware :as middleware]))
 
 (defn cave-create-handler [_system _request]
   {:status 200
@@ -20,5 +21,6 @@
                                     [:input {:type "submit"}]]]]))})
 
 (defn routes [system]
-  [["/cave" {:get {:handler (partial #'cave-handler system)}}]
+  ["" {:middleware (middleware/standard-html-route-middleware system)}
+   ["/cave" {:get {:handler (partial #'cave-handler system)}}]
    ["/cave/create" {:post {:handler (partial #'cave-create-handler system)}}]])
