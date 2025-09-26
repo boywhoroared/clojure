@@ -11,6 +11,7 @@
             [example.system :as-alias system]
             [example.hello.routes :as hello-routes]
             [example.goodbye.routes :as goodbye-routes]
+            [example.cave.routes :as cave-routes]
             [clojure.tools.logging :as log]
             [hiccup2.core :as hiccup]))
 
@@ -23,7 +24,10 @@
 ;; We do this because system is how we get access to the database client.
 ;; And the handlers will need the db to fetch data
 (defn routes [system]
-  ["" (hello-routes/routes system) (goodbye-routes/routes system)])
+  [""
+   (hello-routes/routes system)
+   (goodbye-routes/routes system)
+   (cave-routes/routes system)])
 
 ;; We're using var references to the handler functions. 
 ;; <https://clojure.org/guides/weird_characters#_var_quote>
