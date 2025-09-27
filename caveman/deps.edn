@@ -43,5 +43,8 @@
         ;; completely fresh connection on each database query
         com.zaxxer/HikariCP {:mvn/version "6.0.0"}
         io.github.cdimascio/dotenv-java {:mvn/version "3.0.2"}
-        ring/ring-defaults {:mvn/version "0.7.0"}}}
+        ;; Middleware Configurations
+        ring/ring-defaults {:mvn/version "0.7.0"}
+        ;; Background Jobs
+        msolli/proletarian {:mvn/version "1.0.86-alpha"}}}
 
