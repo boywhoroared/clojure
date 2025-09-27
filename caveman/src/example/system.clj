@@ -1,7 +1,10 @@
 (ns example.system
-  (:require [ring.adapter.jetty :as jetty]
-            [next.jdbc.connection :as connection]
-            [example.routes :as routes])
+  (:require
+   [example.routes :as routes]
+   [example.jobs :as jobs]
+   [ring.adapter.jetty :as jetty]
+   [next.jdbc.connection :as connection]
+   [proletarian.worker :as worker])
   (:import (org.eclipse.jetty.server Server)
            (com.zaxxer.hikari HikariDataSource)
            (io.github.cdimascio.dotenv Dotenv))) ; we are using this because it's more well maintained than its Clojure equivalents
@@ -26,6 +29,17 @@
 (defn stop-db [db]
   (HikariDataSource/.close db)) ; Java interop
 
+(defn start-worker [{::keys [db] :as system}]
+  (let [worker (worker/create-queue-worker
+                db
+                (partial #'jobs/process-job system)
+                {:proletarian/log #'jobs/logger})]
+    (worker/start! worker)
+    worker))
+
+(defn stop-worker [worker]
+  (worker/stop! worker))
+
 (defn start-server "Starts the Jetty server" [{::keys [env] :as system}]
   (jetty/run-jetty
    (partial #'routes/root-handler system)
@@ -47,7 +61,8 @@
 
 (defn start-system []
   (let [system-so-far {::env (start-env)}
-        system-so-far (merge system-so-far {::db (start-db system-so-far)})]
+        system-so-far (merge system-so-far {::db (start-db system-so-far)}) ; DB depends on environment variables, so it comes after `start-env`
+        system-so-far (merge system-so-far {::worker (start-worker system-so-far)})] ; worker has a depedency on DB so it must come after `start-db`
     (merge system-so-far {::server (start-server system-so-far)})))
 
 ; We can't set all the map keys at once because `start-db` and `start-server` have to be passed the system map
@@ -62,6 +77,7 @@
 
 (defn stop-system [system]
   (stop-server (::server system))
+  (stop-worker (::worker system))
   (stop-db (::db system)))
 
 ;; This gets the value of the ::server keyword from the map referenced by `system`
