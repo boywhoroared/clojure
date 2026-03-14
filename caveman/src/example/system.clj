@@ -1,0 +1,90 @@
+(ns example.system
+  (:require
+   [example.routes :as routes]
+   [example.jobs :as jobs]
+   [ring.adapter.jetty :as jetty]
+   [next.jdbc.connection :as connection]
+   [proletarian.worker :as worker])
+  (:import (org.eclipse.jetty.server Server)
+           (com.zaxxer.hikari HikariDataSource)
+           (io.github.cdimascio.dotenv Dotenv))) ; we are using this because it's more well maintained than its Clojure equivalents
+                                                 ; If there is a library you prefer, use it.
+
+;; Fixes linting error because we're using Java interop
+;; (We import the class `org.eclipse.jetty.server.Server` and we invoke a Java class method in `stop-server`)
+(set! *warn-on-reflection* true)
+
+(defn start-env []
+  (Dotenv/load))
+
+;; This file is where put all the "stateful" things like database connections
+;; and clients to external services.
+
+(defn start-db [{::keys [env]}]
+  (connection/->pool HikariDataSource ; more Java interop
+                     {:dbtype "postgres"
+                      :dbname "postgres"
+                      :username (Dotenv/.get env "POSTGRES_USERNAME")
+                      :password (Dotenv/.get env "POSTGRES_PASSWORD")}))
+(defn stop-db [db]
+  (HikariDataSource/.close db)) ; Java interop
+
+(defn start-worker [{::keys [db] :as system}]
+  (let [worker (worker/create-queue-worker
+                db
+                (partial #'jobs/process-job system)
+                {:proletarian/log #'jobs/logger})]
+    (worker/start! worker)
+    worker))
+
+(defn stop-worker [worker]
+  (worker/stop! worker))
+
+(defn start-server "Starts the Jetty server" [{::keys [env] :as system}]
+  (jetty/run-jetty
+   (partial #'routes/root-handler system)
+   {:port (Long/parseLong (Dotenv/.get env "PORT"))
+    :join? false}))
+; `:join? false` configures the server to run in the background.
+
+;; See 
+;; - <https://github.com/ring-clojure/ring/wiki/Getting-Started>
+;; - <https://ring-clojure.github.io/ring/ring.adapter.jetty.html>
+
+(defn stop-server "Stops the Jetty server" [server]
+  (Server/.stop server))
+
+;; `server` is one of the components/services in `system` but `server`
+;; itself needs access to `system` (circular dependendy?), so we 
+;; created a symbol to represent a "system" that is "everything minus the server":
+;; `system-so-far`.
+
+(defn start-system []
+  (let [system-so-far {::env (start-env)}
+        system-so-far (merge system-so-far {::db (start-db system-so-far)}) ; DB depends on environment variables, so it comes after `start-env`
+        system-so-far (merge system-so-far {::worker (start-worker system-so-far)})] ; worker has a depedency on DB so it must come after `start-db`
+    (merge system-so-far {::server (start-server system-so-far)})))
+
+; We can't set all the map keys at once because `start-db` and `start-server` have to be passed the system map
+; So we incrementally build up the system using `system-so-far`
+; We add the env first, because the DB needs the env variables
+; Then we connect to the DB because the server routes will use the DB
+; Finally we start the http server
+
+; `start-server` returns an expr that evaluates to a Server instance
+; And we store the reference to this instance in state
+; This state will be initialied by `start-system`
+
+(defn stop-system [system]
+  (stop-server (::server system))
+  (stop-worker (::worker system))
+  (stop-db (::db system)))
+
+;; This gets the value of the ::server keyword from the map referenced by `system`
+;; and passes it to `stop-server`.
+;;
+;; The `::` is shorthand for `example.system/` so, the full keyword is `:example.system/server`
+
+;; In development, you can setup a hot-reloading server
+;; See <https://github.com/ring-clojure/ring/wiki/Setup-for-development>
+
