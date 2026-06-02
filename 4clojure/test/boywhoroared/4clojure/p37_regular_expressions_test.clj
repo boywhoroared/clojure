@@ -1,12 +1,16 @@
 (ns
- boywhoroared.4clojure.p37-regular-expressions-test
-  (:require [clojure.test :refer [deftest is testing]]))
+ ^{:difficulty "elementary", :tags ["regex" "syntax"], :description "Regex patterns are supported with a special reader macro."} boywhoroared.4clojure.p37-regular-expressions-test
+ (:require [clojure.test :refer [deftest is testing]]))
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+(defn
+ __
+ [& args]
+ ^{:line 33, :column 17}
+ (comment "Write your solution inside this function"))
 
 (deftest
-  problem-37-test
-  (testing
-   "Problem 37: "
-    (is (= __ (apply str (re-seq #"[A-Z]+" "bA1B3Ce "))))))
+ problem-37-test
+ (testing
+  "Problem 37: Regex patterns are supported with a special reader macro."
+  (is (= __ (apply str (re-seq #"[A-Z]+" "bA1B3Ce "))))))
 
