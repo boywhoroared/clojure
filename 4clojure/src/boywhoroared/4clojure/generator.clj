@@ -18,6 +18,7 @@
   (let [id (:id problem)
         safe-name (sanitize-name (:title problem))
         ns-symbol (symbol (str "boywhoroared.4clojure.p" id "-" safe-name "-test"))
+        ns-metadata (select-keys problem [:difficulty :tags :name :description])
         test-symbol (symbol (str "problem-" id "-test"))
 
         ;; Map 4Clojure test strings into live Clojure forms inside (is ...) blocks
@@ -25,8 +26,8 @@
                       (concat (:tests problem) (:secret-tests problem)))]
 
     ;; We return a vector of pure Clojure forms (the entire file's AST)
-    [`(~'ns ~ns-symbol
-            (:require [clojure.test :refer [~'deftest ~'is ~'testing]]))
+    [`(~'ns ~(with-meta ns-symbol ns-metadata)
+       (:require [clojure.test :refer [~'deftest ~'is ~'testing]]))
 
      `(~'defn ~'__ [& ~'args]
               ~'(comment "Write your solution inside this function"))
@@ -44,7 +45,8 @@
     (io/make-parents file-path)
     ;; 2. Spit the data natively using the pretty printer
     (with-open [w (io/writer file-path)]
-      (binding [*out* w]
+      (binding [*out* w
+                *print-meta* true]
         (doseq [form file-ast]
           (pprint form)
           (println)))))) ; Just one println to space out top-level forms cleanly
