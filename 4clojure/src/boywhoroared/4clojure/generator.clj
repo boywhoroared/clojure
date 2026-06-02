@@ -32,7 +32,7 @@
               ~'(comment "Write your solution inside this function"))
 
      `(~'deftest ~test-symbol
-                 (~'testing ~(str "Problem " id ": " (:name problem))
+                 (~'testing ~(str "Problem " id ": " (:name problem) (:description problem))
                             ~@is-forms))]))
 
 (defn generate-test-file [problem]
