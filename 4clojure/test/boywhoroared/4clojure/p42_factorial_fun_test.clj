@@ -1,15 +1,15 @@
 (ns
  boywhoroared.4clojure.p42-factorial-fun-test
- (:require [clojure.test :refer [deftest is testing]]))
+  (:require [clojure.test :refer [deftest is testing]]))
 
 (defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
- problem-42-test
- (testing
-  "Problem 42: "
-  (is (= (__ 1) 1))
-  (is (= (__ 3) 6))
-  (is (= (__ 5) 120))
-  (is (= (__ 8) 40320))))
+  problem-42-test
+  (testing
+   "Problem 42: "
+    (is (= (__ 1) 1))
+    (is (= (__ 3) 6))
+    (is (= (__ 5) 120))
+    (is (= (__ 8) 40320))))
 

@@ -26,14 +26,14 @@
 
     ;; We return a vector of pure Clojure forms (the entire file's AST)
     [`(~'ns ~ns-symbol
-        (:require [clojure.test :refer [~'deftest ~'is ~'testing]]))
+            (:require [clojure.test :refer [~'deftest ~'is ~'testing]]))
 
      `(~'defn ~'__ [& ~'args]
-        ~'(comment "Write your solution inside this function"))
+              ~'(comment "Write your solution inside this function"))
 
      `(~'deftest ~test-symbol
-        (~'testing ~(str "Problem " id ": " (:name problem))
-          ~@is-forms))]))
+                 (~'testing ~(str "Problem " id ": " (:name problem))
+                            ~@is-forms))]))
 
 (defn generate-test-file [problem]
   (let [safe-name (sanitize-name (:title problem))

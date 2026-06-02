@@ -1,16 +1,16 @@
 (ns
  boywhoroared.4clojure.p27-palindrome-detector-test
- (:require [clojure.test :refer [deftest is testing]]))
+  (:require [clojure.test :refer [deftest is testing]]))
 
 (defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
- problem-27-test
- (testing
-  "Problem 27: "
-  (is (false? (__ '(1 2 3 4 5))))
-  (is (true? (__ "racecar")))
-  (is (true? (__ [:foo :bar :foo])))
-  (is (true? (__ '(1 1 3 3 1 1))))
-  (is (false? (__ '(:a :b :c))))))
+  problem-27-test
+  (testing
+   "Problem 27: "
+    (is (false? (__ '(1 2 3 4 5))))
+    (is (true? (__ "racecar")))
+    (is (true? (__ [:foo :bar :foo])))
+    (is (true? (__ '(1 1 3 3 1 1))))
+    (is (false? (__ '(:a :b :c))))))
 

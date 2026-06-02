@@ -1,14 +1,14 @@
 (ns
  boywhoroared.4clojure.p99-product-digits-test
- (:require [clojure.test :refer [deftest is testing]]))
+  (:require [clojure.test :refer [deftest is testing]]))
 
 (defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
- problem-99-test
- (testing
-  "Problem 99: "
-  (is (= (__ 1 1) [1]))
-  (is (= (__ 99 9) [8 9 1]))
-  (is (= (__ 999 99) [9 8 9 0 1]))))
+  problem-99-test
+  (testing
+   "Problem 99: "
+    (is (= (__ 1 1) [1]))
+    (is (= (__ 99 9) [8 9 1]))
+    (is (= (__ 999 99) [9 8 9 0 1]))))
 

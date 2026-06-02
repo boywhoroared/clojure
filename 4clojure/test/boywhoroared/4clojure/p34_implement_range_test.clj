@@ -1,14 +1,14 @@
 (ns
  boywhoroared.4clojure.p34-implement-range-test
- (:require [clojure.test :refer [deftest is testing]]))
+  (:require [clojure.test :refer [deftest is testing]]))
 
 (defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
- problem-34-test
- (testing
-  "Problem 34: "
-  (is (= (__ 1 4) '(1 2 3)))
-  (is (= (__ -2 2) '(-2 -1 0 1)))
-  (is (= (__ 5 8) '(5 6 7)))))
+  problem-34-test
+  (testing
+   "Problem 34: "
+    (is (= (__ 1 4) '(1 2 3)))
+    (is (= (__ -2 2) '(-2 -1 0 1)))
+    (is (= (__ 5 8) '(5 6 7)))))
 
