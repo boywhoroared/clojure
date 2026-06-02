@@ -1,22 +1,25 @@
-{:paths ["src" "dev"]
- :aliases
- {:repl/conjure {:extra-deps {nrepl/nrepl {:mvn/version "1.5.2"}
-                              cider/cider-nrepl {:mvn/version "0.59.0"}}
-                 :main-opts ["--main" "nrepl.cmdline"
-                             "--middleware" "[cider.nrepl/cider-middleware]"
-                             "--interactive"]}
+{:paths ["src" "test" "dev" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
+ :aliases {:test {:extra-paths ["test"]}
+           :repl/conjure {:extra-deps {nrepl/nrepl {:mvn/version "1.5.2"}
+                                       cider/cider-nrepl {:mvn/version "0.59.0"}}
+                          :main-opts ["--main" "nrepl.cmdline"
+                                      "--middleware" "[cider.nrepl/cider-middleware]"
+                                      "--interactive"]}
 
-  :repl/nrepl {:extra-deps {nrepl/nrepl {:mvn/version "1.5.2"}
-                            cider/cider-nrepl {:mvn/version "0.59.0"}}
-               :main-opts ["--main" "nrepl.cmdline"
-                           "--middleware" "[cider.nrepl/cider-middleware]"]}
-  :cljfmt {:extra-deps {io.github.weavejester/cljfmt {:git/tag "0.13.1" :git/sha "7de2860"}}
-           :ns-default cljfmt.tool}
-  :repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.5"}}
-               :exec-fn rebel-readline.tool/repl
-               :exec-args {}
-               :main-opts ["-m" "rebel-readline.main"]}
-  :repl/nrebel {:extra-deps {com.bhauman/rebel-readline-nrepl {:mvn/version "0.1.5"}}
-                :exec-fn rebel-readline.nrepl/connect
-                :exec-args {:background-print false} ;; Optional configuration parameters
-                :main-opts ["-m" "rebel-readline.nrepl.main"]}}}
+           :repl/nrepl {:extra-deps {nrepl/nrepl {:mvn/version "1.5.2"}
+                                     cider/cider-nrepl {:mvn/version "0.59.0"}}
+                        :main-opts ["--main" "nrepl.cmdline"
+                                    "--middleware" "[cider.nrepl/cider-middleware]"]}
+
+           :cljfmt {:extra-deps {io.github.weavejester/cljfmt {:git/tag "0.13.1" :git/sha "7de2860"}}
+                    :ns-default cljfmt.tool}
+
+           :repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.5"}}
+                        :exec-fn rebel-readline.tool/repl
+                        :exec-args {}
+                        :main-opts ["-m" "rebel-readline.main"]}
+           :repl/nrebel {:extra-deps {com.bhauman/rebel-readline-nrepl {:mvn/version "0.1.5"}}
+                         :exec-fn rebel-readline.nrepl/connect
+                         :exec-args {:background-print false} ;; Optional configuration parameters
+                         :main-opts ["-m" "rebel-readline.nrepl.main"]}}}
