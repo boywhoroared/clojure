@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs"], :description "Write a function which returns\nonly the odd numbers from a sequence."} boywhoroared.4clojure.p25-find-the-odd-numbers-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-25-test

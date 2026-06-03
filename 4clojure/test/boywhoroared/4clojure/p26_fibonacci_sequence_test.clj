@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["fibonacci" "seqs"], :description "Write a function which returns\nthe first X fibonacci numbers."} boywhoroared.4clojure.p26-fibonacci-sequence-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-26-test

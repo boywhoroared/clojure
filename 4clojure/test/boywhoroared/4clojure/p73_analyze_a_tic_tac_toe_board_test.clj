@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["game"], :description "A tic-tac-toe board is represented by\na two dimensional vector.\nX is represented by :x, O is represented by :o,\nand empty is represented by :e.\nA player wins by placing three Xs or three Os\nin a horizontal, vertical, or diagonal row.\nWrite a function which analyzes a tic-tac-toe board\nand returns :x if X has won, :o if O has won,\nand nil if neither player has won."} boywhoroared.4clojure.p73-analyze-a-tic-tac-toe-board-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-73-test

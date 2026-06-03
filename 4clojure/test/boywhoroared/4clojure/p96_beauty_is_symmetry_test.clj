@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["trees"], :description "Let us define a binary tree as \"symmetric\"\nif the left half of the tree is\nthe mirror image of the right half of the tree.\nWrite a predicate to determine whether or not\na given binary tree is symmetric.\n(see To Tree, or not to Tree for a reminder on\nthe tree representation we're using)."} boywhoroared.4clojure.p96-beauty-is-symmetry-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-96-test

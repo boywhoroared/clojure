@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "maps"], :description "Because Clojure's for macro allows you to \"walk\" over multiple\nsequences in a nested fashion, it is excellent for transforming all sorts of\nsequences. If you don't want a sequence as your final output (say you want a map),\nyou are often still best-off using for, because you can produce a sequence and feed\nit into a map, for example.\n\nFor this problem, your goal is to \"flatten\" a map of hashmaps. Each key in your\noutput map should be the \"path\" (1) that you would have to take in the original\nmap to get to a value, so for example {1 {2 3}} should result in {[1 2] 3}. You\nonly need to flatten one level of maps: if one of the values is a map, just leave\nit alone.\n\n(1) That is, (get-in original [k1 k2]) should be the same as (get result [k1 k2])"} boywhoroared.4clojure.p146-trees-into-tables-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-146-test

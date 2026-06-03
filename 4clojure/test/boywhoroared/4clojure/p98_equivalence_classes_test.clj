@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags [], :description "A function f defined on a domain D\ninduces an equivalence relation on D, as follows:\na is equivalent to b with respect to f\nif and only if (f a) is equal to (f b).\nWrite a function with arguments f and D\nthat computes the equivalence classes of D with respect to f."} boywhoroared.4clojure.p98-equivalence-classes-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-98-test

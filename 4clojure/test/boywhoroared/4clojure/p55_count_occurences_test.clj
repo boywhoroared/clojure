@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "core-functions"], :description "Write a function which returns a map\ncontaining the number of occurences\nof each distinct item in a sequence."} boywhoroared.4clojure.p55-count-occurences-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-55-test

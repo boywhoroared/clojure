@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Write a function which takes two sequences\nand returns the first item from each,\nthen the second item from each, then the third, etc."} boywhoroared.4clojure.p39-interleave-two-seqs-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-39-test

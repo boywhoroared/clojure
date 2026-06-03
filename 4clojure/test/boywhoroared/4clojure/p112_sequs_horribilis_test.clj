@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs"], :description "Create a function which takes\nan integer and a nested collection of integers as arguments.\nAnalyze the elements of the input collection\nand return a sequence which maintains the nested structure,\nand which includes all elements starting from\nthe head whose sum is less than or equal to the input integer."} boywhoroared.4clojure.p112-sequs-horribilis-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-112-test

@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "core-functions"], :description "Write a function which returns\na sequence of lists of x items each.\nLists of less than x items should not be returned."} boywhoroared.4clojure.p54-partition-a-sequence-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-54-test

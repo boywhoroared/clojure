@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs"], :description "Write a function which takes\na sequence consisting of items with different types\nand splits them up into a set of homogeneous sub-sequences.\nThe internal order of each sub-sequence should be maintained,\nbut the sub-sequences themselves can be returned in any order\n(this is why 'set' is used in the test cases)."} boywhoroared.4clojure.p50-split-by-type-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-50-test

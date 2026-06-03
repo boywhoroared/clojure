@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["graph-theory"], :description "Write a function which calculates\nthe sum of the minimal path through a triangle.\nThe triangle is represented as a vector of vectors.\nThe path should start at the top of the triangle\nand move to an adjacent number on the next row\nuntil the bottom of the triangle is reached."} boywhoroared.4clojure.p79-triangle-minimal-path-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-79-test

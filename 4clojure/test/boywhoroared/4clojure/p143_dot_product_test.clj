@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "math"], :description "Create a function that computes the dot product of two sequences.\nYou may assume that the vectors will have the same length."} boywhoroared.4clojure.p143-dot-product-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-143-test

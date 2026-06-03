@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags [], :description "Given two integers, write a function which\nreturns the greatest common divisor."} boywhoroared.4clojure.p66-greatest-common-divisor-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-66-test

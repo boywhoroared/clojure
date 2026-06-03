@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs"], :description "Write a function that, for any given input vector of numbers, returns\nan infinite lazy sequence of vectors, where each next one is constructed from the\nprevious following the rules used in Pascal's Triangle. For example, for [3 1 2], the\nnext row is [3 4 3 2].\n\nBeware of arithmetic overflow! In clojure (since version 1.3 in 2011), if you use an\narithmetic operator like + and the result is too large to fit into a 64-bit integer,\nan exception is thrown. You can use +' to indicate that you would rather overflow into\nClojure's slower, arbitrary-precision bigint."} boywhoroared.4clojure.p147-pascals-trapezoid-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-147-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["strings" "game"], :description "A standard American deck of playing cards has four suits - spades,\nhearts, diamonds, and clubs - and thirteen cards in each suit. Two is the lowest rank,\nfollowed by other integers up to ten; then the jack, queen, king, and ace.\n\nIt's convenient for humans to represent these cards as suit/rank pairs, such as H5 or DQ:\nthe heart five and diamond queen respectively. But these forms are not convenient for\nprogrammers, so to write a card game you need some way to parse an input string into\nmeaningful components. For purposes of determining rank, we will define the cards to\nbe valued from 0 (the two) to 12 (the ace)\n\nWrite a function which converts (for example) the string \"SJ\" into a map of\n{:suit :spade,:rank 9}. A ten will always be represented with the single character\n\"T\", rather than the two characters \"10\"."} boywhoroared.4clojure.p128-recognize-playing-cards-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-128-test

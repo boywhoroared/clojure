@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["math"], :description "Given a variable number of sets of integers, create\na function which returns true iff all of the sets have a non-empty\nsubset with an equivalent summation."} boywhoroared.4clojure.p131-sum-some-set-subsets-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-131-test

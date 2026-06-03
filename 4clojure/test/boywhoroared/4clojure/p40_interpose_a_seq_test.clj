@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Write a function which separates\nthe items of a sequence by an arbitrary value."} boywhoroared.4clojure.p40-interpose-a-seq-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-40-test

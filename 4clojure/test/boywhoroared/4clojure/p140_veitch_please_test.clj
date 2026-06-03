@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["math" "circuit-design"], :description "Create a function which accepts as input\na boolean algebra function in the form of a set of sets,\nwhere the inner sets are collections of symbols corresponding\nto the input boolean variables which satisfy the function\n(the inputs of the inner sets are conjoint,\nand the sets themselves are disjoint…\nalso known as canonical minterms).\nNote: capitalized symbols represent truth,\nand lower-case symbols represent negation of the inputs.\nYour function must return the minimal function\nwhich is logically equivalent to the input.\n\nPS — You may want to read about K-Maps before proceeding."} boywhoroared.4clojure.p140-veitch-please-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-140-test

@@ -2,7 +2,7 @@
   "Generates unit test files from 4Clojure problem data.
   This module was LLM generated."
   (:require [clojure.string :as string]
-            [clojure.pprint :refer [pprint]]
+            [clojure.pprint :refer [pprint write]]
             [clojure.java.io :as io]
             [boywhoroared.4clojure.problems :refer [problems]]))
 
@@ -30,7 +30,7 @@
        (:require [clojure.test :refer [~'deftest ~'is ~'testing]]))
 
      `(~'defn ~'__ [& ~'args]
-              ~'(comment "Write your solution inside this function"))
+              ~(list 'comment "Write your solution inside this function"))
 
      `(~'deftest ~test-symbol
                  (~'testing ~(str "Problem " id ": " (:name problem) (:description problem))
@@ -46,7 +46,7 @@
     ;; 2. Spit the data natively using the pretty printer
     (with-open [w (io/writer file-path)]
       (binding [*out* w
-                *print-meta* true]
+                *print-meta* true] ; presumably, `pprint` is the same machinery used by the REPL, so we can use these bindings
         (doseq [form file-ast]
           (pprint form)
           (println)))))) ; Just one println to space out top-level forms cleanly

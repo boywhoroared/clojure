@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "core-functions"], :description "Write a function that takes a two-argument predicate,\na value, and a collection; and returns a new collection where the value\nis inserted between every two items that satisfy the predicate."} boywhoroared.4clojure.p132-intervals-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-132-test

@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["game"], :description "Reversi is normally played on an 8 by 8 board.\nIn this problem, a 4 by 4 board is represented\nas a two-dimensional vector\nwith black, white, and empty pieces represented\nby ‘b, ‘w, and ‘e, respectively.\nCreate a function that accepts\na game board and color as arguments,\nand returns a map of legal moves for that color.\nEach key should be the coordinates of a legal move,\nand its value a set of the coordinates\nof the pieces flipped by that move.\n\nBoard coordinates should be as in calls to get-in.\nFor example, [0 1] is the topmost row,\nsecond column from the left."} boywhoroared.4clojure.p124-analyze-reversi-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-124-test

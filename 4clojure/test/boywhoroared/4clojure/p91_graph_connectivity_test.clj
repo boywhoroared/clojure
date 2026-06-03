@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["graph-theory"], :description "Given a graph, determine whether the graph is connected.\nA connected graph is such that\na path exists between any two given nodes.\n\n-Your function must return true if\n the graph is connected and false otherwise.\n\n-You will be given a set of tuples\n representing the edges of a graph.\n Each member of a tuple being a vertex/node in the graph.\n\n-Each edge is undirected (can be traversed either direction)."} boywhoroared.4clojure.p91-graph-connectivity-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-91-test

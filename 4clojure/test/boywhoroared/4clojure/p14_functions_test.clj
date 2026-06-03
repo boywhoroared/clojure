@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags [], :description "Clojure has many different ways to create functions."} boywhoroared.4clojure.p14-functions-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-14-test

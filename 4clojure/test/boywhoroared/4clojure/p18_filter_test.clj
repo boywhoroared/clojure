@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags [], :description "The filter function takes two arguments:\na predicate function (f) and a sequence (s).\nFilter returns a new sequence consisting\nof all the items of s for which (f item) returns true."} boywhoroared.4clojure.p18-filter-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-18-test

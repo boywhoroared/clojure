@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["graph-theory"], :description "Starting with a graph you must write a function\nthat returns true if it is possible to make\na tour of the graph in which every edge is visited exactly once.\n\nThe graph is represented by a vector of tuples,\nwhere each tuple represents a single edge.\n\nThe rules are:\n\n- You can start at any node.\n- You must visit each edge exactly once.\n- All edges are undirected."} boywhoroared.4clojure.p89-graph-tour-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-89-test

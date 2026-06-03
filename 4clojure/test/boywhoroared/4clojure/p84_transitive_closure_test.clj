@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["set-theory"], :description "Write a function which generates\nthe transitive closure of a binary relation.\nThe relation will be represented as a set of 2 item vectors."} boywhoroared.4clojure.p84-transitive-closure-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-84-test

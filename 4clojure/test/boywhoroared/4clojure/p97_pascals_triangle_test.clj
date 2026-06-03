@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags [], :description "Pascal's triangle is a triangle of numbers\ncomputed using the following rules:\n\n- The first row is 1.\n- Each successive row is computed by\n  adding together adjacent numbers in the row above,\nand adding a 1 to the beginning and end of the row.\n\nWrite a function which returns\n:the nth row of Pascal's Triangle."} boywhoroared.4clojure.p97-pascals-triangle-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-97-test

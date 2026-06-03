@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags [], :description "Write a function that takes a sequence of integers\nand returns a sequence of “intervals”.\nEach interval is a a vector of two integers, start and end,\nsuch that all integers between start and end (inclusive)\nare contained in the input sequence."} boywhoroared.4clojure.p171-intervals-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-171-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Write a function which returns\nthe Nth element from a sequence."} boywhoroared.4clojure.p21-nth-element-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-21-test

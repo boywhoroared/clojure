@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs"], :description "Transform a sequence into a sequence of pairs containing the original\nelements along with their index."} boywhoroared.4clojure.p157-indexing-sequences-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-157-test

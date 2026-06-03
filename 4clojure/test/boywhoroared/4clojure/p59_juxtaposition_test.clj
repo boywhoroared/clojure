@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["higher-order-functions" "core-functions"], :description "Take a set of functions and return a new function\nthat takes a variable number of arguments and returns a sequence\ncontaining the result of applying each function\nleft-to-right to the argument list."} boywhoroared.4clojure.p59-juxtaposition-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-59-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["set-theory"], :description "Given a set of sets, create a function which returns true if no\ntwo of those sets have any elements in common (1) and false otherwise. Some of the\ntest cases are a bit tricky, so pay a little more attention to them.\n\n(1) Such sets are usually called pairwise disjoint or mutually disjoint."} boywhoroared.4clojure.p153-pairwise-disjoint-sets-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-153-test

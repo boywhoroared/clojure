@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "recursion" "math"], :description "In what follows, m, n, s, t denote nonnegative integers, f denotes a\nfunction that accepts two arguments and is defined for all nonnegative integers in both\narguments.\n\nIn mathematics, the function f can be interpreted as an infinite matrix with infinitely\nmany rows and columns that, when written, looks like an ordinary matrix but its rows and\ncolumns cannot be written down completely, so are terminated with ellipses. In Clojure,\nsuch infinite matrix can be represented as an infinite lazy sequence of infinite lazy\nsequences, where the inner sequences represent rows.\n\nWrite a function that accepts 1, 3 and 5 arguments\n\n  * with the argument f, it returns the infinite matrix A that has the entry in the i-th\nrow and the j-th column equal to f(i,j) for i,j = 0,1,2,...;\n  * with the arguments f, m, n, it returns the infinite matrix B that equals the remainder\nof the matrix A after the removal of the first m rows and the first n columns;\n  * with the arguments f, m, n, s, t, it returns the finite s-by-t matrix that consists of\nthe first t entries of each of the first s rows of the matrix B or, equivalently, that\nconsists of the first s entries of each of the first t columns of the matrix B."} boywhoroared.4clojure.p168-infinite-matrix-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-168-test

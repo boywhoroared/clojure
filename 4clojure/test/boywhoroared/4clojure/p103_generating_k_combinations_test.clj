@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "combinatorics"], :description "Given a sequence S consisting of n elements\ngenerate all k-combinations of S,\ni.e. generate all possible sets consisting\nof k distinct elements taken from S.\nThe number of k-combinations for a sequence\nis equal to the binomial coefficient."} boywhoroared.4clojure.p103-generating-k-combinations-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-103-test

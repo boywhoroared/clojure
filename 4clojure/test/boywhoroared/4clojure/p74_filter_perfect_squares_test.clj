@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags [], :description "Given a string of comma separated integers,\nwrite a function which returns a new comma separated string\nthat only contains the numbers which are perfect squares."} boywhoroared.4clojure.p74-filter-perfect-squares-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-74-test

@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["partial-functions"], :description "Write a function that accepts a curried function of unknown arity n.\nReturn an equivalent function of n arguments. "} boywhoroared.4clojure.p158-decurry-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-158-test

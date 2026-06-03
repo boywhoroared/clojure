@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs"], :description "Write a function which reverses the\ninterleave process into x number of subsequences."} boywhoroared.4clojure.p43-reverse-interleave-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-43-test

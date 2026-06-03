@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["core-functions"], :description "Given a function f and a sequence s,\nwrite a function which returns a map.\nThe keys should be the values of f applied to each item in s.\nThe value at each key should be a vector\nof corresponding items in the order they appear in s."} boywhoroared.4clojure.p63-group-a-sequence-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-63-test

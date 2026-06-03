@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs"], :description "Write a function which returns\nthe sum of a sequence of numbers."} boywhoroared.4clojure.p24-sum-it-all-up-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-24-test

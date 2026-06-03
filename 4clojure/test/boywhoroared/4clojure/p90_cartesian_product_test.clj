@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["set-theory"], :description "Write a function which calculates\nthe Cartesian product of two sets."} boywhoroared.4clojure.p90-cartesian-product-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-90-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags [], :description "Convert a binary number,\nprovided in the form of a string,\nto its numerical value."} boywhoroared.4clojure.p122-read-a-binary-number-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-122-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["math"], :description "Write a function which calculates\nthe least common multiple.\nYour function should accept a variable number\nof positive integers or ratios."} boywhoroared.4clojure.p100-least-common-multiple-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-100-test

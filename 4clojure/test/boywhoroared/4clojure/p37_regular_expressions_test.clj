@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags ["regex" "syntax"], :description "Regex patterns are supported with a special reader macro."} boywhoroared.4clojure.p37-regular-expressions-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-37-test

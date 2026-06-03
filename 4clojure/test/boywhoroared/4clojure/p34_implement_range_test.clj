@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Write a function which creates a list\nof all integers in a given range."} boywhoroared.4clojure.p34-implement-range-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-34-test

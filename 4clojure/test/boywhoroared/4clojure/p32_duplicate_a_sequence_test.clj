@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs"], :description "Write a function which\nduplicates each element of a sequence."} boywhoroared.4clojure.p32-duplicate-a-sequence-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-32-test

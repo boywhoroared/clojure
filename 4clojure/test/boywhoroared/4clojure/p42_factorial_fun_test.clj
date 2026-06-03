@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["math"], :description "Write a function which calculates factorials."} boywhoroared.4clojure.p42-factorial-fun-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-42-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs"], :description "The iterate function can be used to produce\nan infinite lazy sequence."} boywhoroared.4clojure.p45-intro-to-iterate-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-45-test

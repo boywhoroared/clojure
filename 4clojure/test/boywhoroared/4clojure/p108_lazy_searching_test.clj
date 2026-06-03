@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "sorting"], :description "Given any number of sequences,\neach sorted from smallest to largest,\nfind the smallest single number\nwhich appears in all of the sequences.\nThe sequences may be infinite, so be careful to search lazily."} boywhoroared.4clojure.p108-lazy-searching-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-108-test

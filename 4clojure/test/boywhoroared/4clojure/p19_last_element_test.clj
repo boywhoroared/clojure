@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Write a function which returns\nthe last element in a sequence."} boywhoroared.4clojure.p19-last-element-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-19-test

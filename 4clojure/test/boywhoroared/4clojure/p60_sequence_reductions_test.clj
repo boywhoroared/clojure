@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "core-functions"], :description "Write a function which behaves like reduce,\nbut returns each intermediate value of the reduction.\nYour function must accept either two or three arguments,\nand the return sequence must be lazy."} boywhoroared.4clojure.p60-sequence-reductions-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-60-test

@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags [], :description "Write a function which returns a personalized greeting."} boywhoroared.4clojure.p16-hello-world-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-16-test

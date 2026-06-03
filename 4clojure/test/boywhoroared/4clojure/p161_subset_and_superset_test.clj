@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags ["set-theory"], :description "Set A is a subset of set B, or equivalently B is a superset of A,\n    if A is \"contained\" inside B. A and B may coincide."} boywhoroared.4clojure.p161-subset-and-superset-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-161-test

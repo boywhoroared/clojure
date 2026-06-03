@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags [], :description "Write a function which doubles a number."} boywhoroared.4clojure.p15-double-down-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-15-test

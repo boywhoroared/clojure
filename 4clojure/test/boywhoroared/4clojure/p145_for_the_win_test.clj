@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags ["core-functions" "seqs"], :description "Clojure's for macro is a tremendously versatile mechanism for\nproducing a sequence based on some other sequence(s). It can take some time to\nunderstand how to use it properly, but that investment will be paid back with\nclear, concise sequence-wrangling later. With that in mind, read over these for\nexpressions and try to see how each of them produces the same result."} boywhoroared.4clojure.p145-for-the-win-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-145-test

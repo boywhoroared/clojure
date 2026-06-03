@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["core-functions"], :description "Write a function which takes a vector of keys\nand a vector of values and constructs a map from them."} boywhoroared.4clojure.p61-map-construction-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-61-test

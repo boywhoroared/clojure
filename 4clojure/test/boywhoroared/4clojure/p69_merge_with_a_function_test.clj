@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["core-functions"], :description "Write a function which takes\na function f and a variable number of maps.\nYour function should return a map\nthat consists of the rest of the maps conj-ed onto the first.\nIf a key occurs in more than one map,\nthe mapping(s) from the latter (left-to-right)\nshould be combined with the mapping in the result\nby calling (f val-in-result val-in-latter)"} boywhoroared.4clojure.p69-merge-with-a-function-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-69-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["trees"], :description "Write a predicate which checks whether or not\na given sequence represents a binary tree.\nEach node in the tree must have a value,\na left child, and a right child."} boywhoroared.4clojure.p95-to-tree-or-not-to-tree-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-95-test

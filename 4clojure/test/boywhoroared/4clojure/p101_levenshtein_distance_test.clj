@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["seqs"], :description "Given two sequences x and y,\ncalculate the Levenshtein distance of x and y,\ni. e. the minimum number of edits needed to transform x into y.\nThe allowed edits are:\n\n- insert a single item\n- delete a single item\n- replace a single item with another item\n\nWARNING: Some of the test cases may timeout\nif you write an inefficient solution!"} boywhoroared.4clojure.p101-levenshtein-distance-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-101-test

@@ -2,11 +2,7 @@
  ^{:difficulty "elementary", :tags ["syntax"], :description "Clojure lets you give local names\nto values using the special let-form."} boywhoroared.4clojure.p35-local-bindings-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-35-test

@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["functions"], :description "Given a mathematical formula in prefix notation,\nreturn a function that calculates the value of the formula.\nThe formula can contain nested calculations using\nthe four basic mathematical operators, numeric constants,\nand symbols representing variables.\nThe returned function has to accept a single parameter\ncontaining the map of variable names to their values."} boywhoroared.4clojure.p121-universal-computation-engine-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-121-test

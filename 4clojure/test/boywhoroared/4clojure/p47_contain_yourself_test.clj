@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags [], :description "The contains? function checks if a KEY\nis present in a given collection.\nThis often leads beginner clojurians to use it incorrectly\nwith numerically indexed collections like vectors and lists."} boywhoroared.4clojure.p47-contain-yourself-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-47-test

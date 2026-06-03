@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["sorting"], :description "Write a function which splits a sentence up\ninto a sorted list of words.\nCapitalization should not affect sort order\nand punctuation should be ignored."} boywhoroared.4clojure.p70-word-sorting-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-70-test

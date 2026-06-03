@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Given a side-effect free function f\nand an initial value x\nwrite a function which returns an infinite lazy sequence\nof x, (f x), (f (f x)), (f (f (f x))), etc."} boywhoroared.4clojure.p62-re-implement-iteration-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-62-test

@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["higher-order-functions" "core-functions"], :description "Write a function which\nallows you to create function compositions.\nThe parameter list should take a variable number of functions,\nand create a function applies them from right-to-left."} boywhoroared.4clojure.p58-function-composition-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-58-test

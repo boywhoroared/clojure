@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["core-functions"], :description "Reimplement the function described in <a href=\"76\"> \"Intro to Trampoline\"</a>."} boywhoroared.4clojure.p78-reimplement-trampoline-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-78-test

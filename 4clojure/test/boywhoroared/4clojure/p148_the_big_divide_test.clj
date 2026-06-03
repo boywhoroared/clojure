@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["math"], :description "Write a function which calculates the sum of all natural\nnumbers under n (first argument) which are evenly divisible by at least one\nof a and b (second and third argument). Numbers a and b are guaranteed to be coprimes.\n\nNote: Some test cases have a very large n, so the most obvious solution will\nexceed the time limit."} boywhoroared.4clojure.p148-the-big-divide-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-148-test

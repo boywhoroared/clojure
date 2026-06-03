@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["math"], :description "A balanced number is one whose component digits\nhave the same sum on the left and right halves of the number.\nWrite a function which accepts an integer n,\nand returns true iff n is balanced."} boywhoroared.4clojure.p115-the-balance-of-n-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-115-test

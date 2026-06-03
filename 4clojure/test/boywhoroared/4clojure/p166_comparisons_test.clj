@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags [], :description "For any orderable data type it's possible to derive all of the\nbasic comparison operations (<, ≤, =, ≠, ≥, and >) from a single operation (any\noperator but = or ≠ will work). Write a function that takes three arguments, a\nless than operator for the data and two items to compare. The function should\nreturn a keyword describing the relationship between the two items. The keywords\nfor the relationship between x and y are as follows:\n\n  x = y → :eq\n  x > y → :gt\n  x < y → :lt"} boywhoroared.4clojure.p166-comparisons-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-166-test

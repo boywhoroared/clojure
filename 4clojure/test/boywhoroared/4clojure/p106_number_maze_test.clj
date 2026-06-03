@@ -2,11 +2,7 @@
  ^{:difficulty "hard", :tags ["numbers"], :description "Given a pair of numbers, the start and end point,\nfind a path between the two using only three possible operations:\n\n1. double\n2. halve (odd numbers cannot be halved)\n3. add 2\n\nFind the shortest path through the “maze”.\nBecause there are multiple shortest paths,\nyou must return the length of the shortest path, not the path itself."} boywhoroared.4clojure.p106-number-maze-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-106-test

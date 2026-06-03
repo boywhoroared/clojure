@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["set-theory"], :description "Write a function which returns\nthe intersection of two sets.\nThe intersection is the sub-set of items\nthat each set has in common."} boywhoroared.4clojure.p81-set-intersection-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-81-test

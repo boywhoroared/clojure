@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["higher-order-functions"], :description "Write a higher-order function which\nflips the order of the arguments of an input function."} boywhoroared.4clojure.p46-flipping-out-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-46-test

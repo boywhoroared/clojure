@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["strings"], :description "Write a function which takes a string\nand returns a new string containing only the capital letters."} boywhoroared.4clojure.p29-get-the-caps-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-29-test

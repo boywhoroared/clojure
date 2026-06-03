@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "math"], :description "A palindromic number is a number that is the same when\nwritten forwards or backwards (e.g., 3, 99, 14341).\n\nWrite a function which takes an integer n, as its only argument, and\nreturns an increasing lazy sequence of all palindromic numbers that\nare not less than n.\n\nThe most simple solution will exceed the time limit!"} boywhoroared.4clojure.p150-palindromic-numbers-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-150-test

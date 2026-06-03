@@ -2,11 +2,7 @@
  ^{:difficulty "", :tags nil, :description "Write a function which takes three or more integers.\nUsing these integers, your function should\ngenerate clojure code representing an equation.\nThe following rules for the equation must be satisfied:\n\n1. All integers must be used once and only once.\n\n2. The order of the integers must be\n   maintained when reading the equation left-to-right.\n\n3. The only functions you may use are +, *, or =.\n\n4. The equation must use the minimum number of parentheses.\n\n5. If no satisfying equation exists, return nil."} boywhoroared.4clojure.p87-create-an-equation-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-87-test

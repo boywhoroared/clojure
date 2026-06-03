@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["math"], :description "Write a function which returns a sequence of digits\nof a non-negative number (first argument)\nin numerical system with an arbitrary base (second argument).\nDigits should be represented with their integer values,\ne.g. 15 would be [1 5] in base 10,\n[1 1 1 1] in base 2 and [15] in base 16."} boywhoroared.4clojure.p137-digits-and-bases-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-137-test

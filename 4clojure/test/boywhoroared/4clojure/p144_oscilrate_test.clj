@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["sequences"], :description "Write an oscillating iterate: a function that takes\nan initial value and a variable number of functions. It should return\na lazy sequence of the functions applied to the value in order, restarting\nfrom the first function after it hits the end."} boywhoroared.4clojure.p144-oscilrate-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-144-test

@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags [], :description "The some function takes\na predicate function and a collection.\nIt returns the first logical true value of (predicate x)\nwhere x is an item in the collection."} boywhoroared.4clojure.p48-intro-to-some-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-48-test

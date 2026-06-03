@@ -2,11 +2,7 @@
  ^{:difficulty "easy", :tags ["destructuring"], :description "Here is an example of some\nmore sophisticated destructuring."} boywhoroared.4clojure.p51-advanced-destructuring-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-51-test

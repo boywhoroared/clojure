@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "higher-order-functions"], :description "take-while is great for\nfiltering sequences, but it limited:\nyou can only examine a single item of the sequence at a time.\nWhat if you need to keep track of\nsome state as you go over the sequence?\n\nWrite a function which accepts an integer n,\na predicate p, and a sequence.\nIt should return a lazy sequence of items in the list up to,\nbut not including, the nth item that satisfies the predicate."} boywhoroared.4clojure.p114-global-take-while-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-114-test

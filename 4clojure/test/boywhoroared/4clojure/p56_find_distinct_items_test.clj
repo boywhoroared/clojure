@@ -2,11 +2,7 @@
  ^{:difficulty "medium", :tags ["seqs" "core-functions"], :description "Write a function which\nremoves the duplicates from a sequence.\nOrder of the items must be maintained."} boywhoroared.4clojure.p56-find-distinct-items-test
  (:require [clojure.test :refer [deftest is testing]]))
 
-(defn
- __
- [& args]
- ^{:line 33, :column 17}
- (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution inside this function"))
 
 (deftest
  problem-56-test
