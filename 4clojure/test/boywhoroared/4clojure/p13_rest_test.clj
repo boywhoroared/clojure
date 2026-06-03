@@ -1,13 +1,14 @@
 (ns
- boywhoroared.4clojure.p13-rest-test
-  (:require [clojure.test :refer [deftest is testing run-tests]]))
+ ^{:difficulty "elementary", :tags [], :description "The rest function will return all the items\nof a sequence except the first."} boywhoroared.4clojure.p13-rest-test
+ (:require [clojure.test :refer [deftest is testing run-tests]]))
 
 (def __ '(20 30 40))
 ;; `rest` returns the tail of a list as a sequence
 
 (deftest
-  problem-13-test
-  (testing "Problem 13: " (is (= __ (rest [10 20 30 40])))))
+ problem-13-test
+ (testing
+  "Problem 13: The rest function will return all the items\nof a sequence except the first."
+  (is (= __ (rest [10 20 30 40])))))
 
 (run-tests)
-
