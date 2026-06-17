@@ -1,101 +1,111 @@
 (ns
- ^{:difficulty "hard", :tags ["math" "circuit-design"], :description "Create a function which accepts as input\na boolean algebra function in the form of a set of sets,\nwhere the inner sets are collections of symbols corresponding\nto the input boolean variables which satisfy the function\n(the inputs of the inner sets are conjoint,\nand the sets themselves are disjoint…\nalso known as canonical minterms).\nNote: capitalized symbols represent truth,\nand lower-case symbols represent negation of the inputs.\nYour function must return the minimal function\nwhich is logically equivalent to the input.\n\nPS — You may want to read about K-Maps before proceeding."} boywhoroared.4clojure.p140-veitch-please-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 140 :difficulty "hard" :tags ["math" "circuit-design"] :description "Create a function which accepts as input
+a boolean algebra function in the form of a set of sets,
+where the inner sets are collections of symbols corresponding
+to the input boolean variables which satisfy the function
+(the inputs of the inner sets are conjoint,
+and the sets themselves are disjoint…
+also known as canonical minterms).
+Note: capitalized symbols represent truth,
+and lower-case symbols represent negation of the inputs.
+Your function must return the minimal function
+which is logically equivalent to the input.
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+PS — You may want to read about K-Maps before proceeding."} boywhoroared.4clojure.p140-veitch-please-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
-(deftest
- problem-140-test
- (testing
-  "Problem 140: Create a function which accepts as input\na boolean algebra function in the form of a set of sets,\nwhere the inner sets are collections of symbols corresponding\nto the input boolean variables which satisfy the function\n(the inputs of the inner sets are conjoint,\nand the sets themselves are disjoint…\nalso known as canonical minterms).\nNote: capitalized symbols represent truth,\nand lower-case symbols represent negation of the inputs.\nYour function must return the minimal function\nwhich is logically equivalent to the input.\n\nPS — You may want to read about K-Maps before proceeding."
-  (is
-   (=
-    (__
-     #{#{'A 'B 'C 'd}
-       #{'B 'C 'a 'd}
-       #{'A 'B 'c 'd}
-       #{'A 'C 'b 'd}
-       #{'A 'C 'b 'D}
-       #{'A 'b 'c 'd}
-       #{'A 'b 'c 'D}
-       #{'A 'B 'c 'D}})
-    #{#{'A 'c} #{'A 'b} #{'B 'C 'd}}))
-  (is (= (__ #{#{'A 'B 'C 'd} #{'A 'B 'C 'D}}) #{#{'A 'B 'C}}))
-  (is
-   (=
-    (__
-     #{#{'b 'c 'a 'd}
-       #{'B 'c 'a 'd}
-       #{'b 'c 'a 'D}
-       #{'A 'B 'C 'd}
-       #{'A 'C 'b 'd}
-       #{'A 'C 'b 'D}
-       #{'B 'c 'a 'D}
-       #{'A 'B 'C 'D}})
-    #{#{'c 'a} #{'A 'C}}))
-  (is
-   (=
-    (__ #{#{'C 'b 'a} #{'B 'C 'a} #{'B 'c 'a} #{'b 'c 'a}})
-    #{#{'a}}))
-  (is
-   (=
-    (__
-     #{#{'B 'c 'a 'd}
-       #{'b 'c 'a 'D}
-       #{'A 'B 'C 'd}
-       #{'A 'C 'b 'D}
-       #{'B 'C 'a 'D}
-       #{'A 'B 'c 'D}})
-    #{#{'B 'c 'a 'd}
-      #{'b 'c 'a 'D}
-      #{'A 'B 'C 'd}
-      #{'A 'C 'b 'D}
-      #{'B 'C 'a 'D}
-      #{'A 'B 'c 'D}}))
-  (is
-   (=
-    (__
-     #{#{'b 'c 'a 'd}
-       #{'B 'c 'a 'd}
-       #{'b 'c 'a 'D}
-       #{'A 'B 'c 'd}
-       #{'B 'c 'a 'D}
-       #{'A 'B 'c 'D}})
-    #{#{'c 'a} #{'B 'c}}))
-  (is
-   (=
-    (__
-     #{#{'B 'c 'a 'd}
-       #{'b 'c 'a 'D}
-       #{'A 'B 'C 'd}
-       #{'B 'C 'a 'd}
-       #{'A 'B 'c 'd}
-       #{'A 'C 'b 'D}
-       #{'A 'b 'c 'D}
-       #{'C 'b 'a 'D}})
-    #{#{'B 'd} #{'b 'D}}))
-  (is
-   (=
-    (__
-     #{#{'b 'c 'a 'd}
-       #{'A 'C 'b 'd}
-       #{'C 'b 'a 'd}
-       #{'A 'b 'c 'd}
-       #{'B 'C 'a 'D}
-       #{'B 'c 'a 'D}
-       #{'A 'B 'c 'D}
-       #{'A 'B 'C 'D}})
-    #{#{'b 'd} #{'B 'D}}))
-  (is
-   (=
-    (__
-     #{#{'b 'c 'a 'd}
-       #{'A 'C 'b 'd}
-       #{'C 'b 'a 'd}
-       #{'A 'b 'c 'd}
-       #{'B 'C 'a 'D}
-       #{'B 'c 'a 'D}
-       #{'A 'B 'c 'D}
-       #{'A 'B 'C 'D}})
-    #{#{'b 'd} #{'B 'D}}))))
+(def __ (comment "Write the solution value here"))
 
+(deftest problem-140-test
+     (testing "Problem 140: Create a function which accepts as input
+a boolean algebra function in the form of a set of sets,
+where the inner sets are collections of symbols corresponding
+to the input boolean variables which satisfy the function
+(the inputs of the inner sets are conjoint,
+and the sets themselves are disjoint…
+also known as canonical minterms).
+Note: capitalized symbols represent truth,
+and lower-case symbols represent negation of the inputs.
+Your function must return the minimal function
+which is logically equivalent to the input.
+
+PS — You may want to read about K-Maps before proceeding."
+       (is (= (__ #{#{'a 'B 'C 'd}
+                                #{'A 'b 'c 'd}
+                                #{'A 'b 'c 'D}
+                                #{'A 'b 'C 'd}
+                                #{'A 'b 'C 'D}
+                                #{'A 'B 'c 'd}
+                                #{'A 'B 'c 'D}
+                                #{'A 'B 'C 'd}})
+                      #{#{'A 'c}
+                        #{'A 'b}
+                        #{'B 'C 'd}}))
+(is (= (__ #{#{'A 'B 'C 'D}
+                                #{'A 'B 'C 'd}})
+                      #{#{'A 'B 'C}}))
+(is (= (__ #{#{'a 'b 'c 'd}
+                                #{'a 'B 'c 'd}
+                                #{'a 'b 'c 'D}
+                                #{'a 'B 'c 'D}
+                                #{'A 'B 'C 'd}
+                                #{'A 'B 'C 'D}
+                                #{'A 'b 'C 'd}
+                                #{'A 'b 'C 'D}})
+                      #{#{'a 'c}
+                        #{'A 'C}}))
+(is (= (__ #{#{'a 'b 'c}
+                                #{'a 'B 'c}
+                                #{'a 'b 'C}
+                                #{'a 'B 'C}})
+                      #{#{'a}}))
+(is (= (__ #{#{'a 'B 'c 'd}
+                                #{'A 'B 'c 'D}
+                                #{'A 'b 'C 'D}
+                                #{'a 'b 'c 'D}
+                                #{'a 'B 'C 'D}
+                                #{'A 'B 'C 'd}})
+                      #{#{'a 'B 'c 'd}
+                        #{'A 'B 'c 'D}
+                        #{'A 'b 'C 'D}
+                        #{'a 'b 'c 'D}
+                        #{'a 'B 'C 'D}
+                        #{'A 'B 'C 'd}}))
+(is (= (__ #{#{'a 'b 'c 'd}
+                                #{'a 'B 'c 'd}
+                                #{'A 'B 'c 'd}
+                                #{'a 'b 'c 'D}
+                                #{'a 'B 'c 'D}
+                                #{'A 'B 'c 'D}})
+                      #{#{'a 'c}
+                        #{'B 'c}}))
+(is (= (__ #{#{'a 'B 'c 'd}
+                                #{'A 'B 'c 'd}
+                                #{'a 'b 'c 'D}
+                                #{'a 'b 'C 'D}
+                                #{'A 'b 'c 'D}
+                                #{'A 'b 'C 'D}
+                                #{'a 'B 'C 'd}
+                                #{'A 'B 'C 'd}})
+                      #{#{'B 'd}
+                        #{'b 'D}}))
+(is (= (__ #{#{'a 'b 'c 'd}
+                                #{'A 'b 'c 'd}
+                                #{'a 'B 'c 'D}
+                                #{'A 'B 'c 'D}
+                                #{'a 'B 'C 'D}
+                                #{'A 'B 'C 'D}
+                                #{'a 'b 'C 'd}
+                                #{'A 'b 'C 'd}})
+                      #{#{'B 'D}
+                        #{'b 'd}}))
+(is (= (__ #{#{'a 'b 'c 'd}
+                                #{'A 'b 'c 'd}
+                                #{'a 'B 'c 'D}
+                                #{'A 'B 'c 'D}
+                                #{'a 'B 'C 'D}
+                                #{'A 'B 'C 'D}
+                                #{'a 'b 'C 'd}
+                                #{'A 'b 'C 'd}})
+                      #{#{'B 'D}
+                        #{'b 'd}}))))

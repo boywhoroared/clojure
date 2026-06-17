@@ -1,38 +1,26 @@
 (ns
- ^{:difficulty "medium", :tags ["seqs" "combinatorics"], :description "Given a sequence S consisting of n elements\ngenerate all k-combinations of S,\ni.e. generate all possible sets consisting\nof k distinct elements taken from S.\nThe number of k-combinations for a sequence\nis equal to the binomial coefficient."} boywhoroared.4clojure.p103-generating-k-combinations-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 103 :difficulty "medium" :tags ["seqs" "combinatorics"] :description "Given a sequence S consisting of n elements
+generate all k-combinations of S,
+i.e. generate all possible sets consisting
+of k distinct elements taken from S.
+The number of k-combinations for a sequence
+is equal to the binomial coefficient."} boywhoroared.4clojure.p103-generating-k-combinations-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+(def __ (comment "Write the solution value here"))
 
-(deftest
- problem-103-test
- (testing
-  "Problem 103: Given a sequence S consisting of n elements\ngenerate all k-combinations of S,\ni.e. generate all possible sets consisting\nof k distinct elements taken from S.\nThe number of k-combinations for a sequence\nis equal to the binomial coefficient."
-  (is (= (__ 1 #{4 6 5}) #{#{6} #{5} #{4}}))
-  (is (= (__ 10 #{4 6 5}) #{}))
-  (is (= (__ 2 #{0 1 2}) #{#{0 1} #{1 2} #{0 2}}))
-  (is
-   (=
-    (__ 3 #{0 1 4 3 2})
-    #{#{0 4 3}
-      #{0 1 4}
-      #{4 3 2}
-      #{0 1 2}
-      #{0 1 3}
-      #{1 3 2}
-      #{0 3 2}
-      #{1 4 3}
-      #{1 4 2}
-      #{0 4 2}}))
-  (is
-   (= (__ 4 #{"efg" "abc" [1 2 3] :a}) #{#{"efg" "abc" [1 2 3] :a}}))
-  (is
-   (=
-    (__ 2 #{"efg" "abc" [1 2 3] :a})
-    #{#{[1 2 3] :a}
-      #{"efg" :a}
-      #{"abc" :a}
-      #{"abc" [1 2 3]}
-      #{"efg" "abc"}
-      #{"efg" [1 2 3]}}))))
-
+(deftest problem-103-test
+     (testing "Problem 103: Given a sequence S consisting of n elements
+generate all k-combinations of S,
+i.e. generate all possible sets consisting
+of k distinct elements taken from S.
+The number of k-combinations for a sequence
+is equal to the binomial coefficient."
+       (is (= (__ 1 #{4 5 6}) #{#{4} #{5} #{6}}))
+(is (= (__ 10 #{4 5 6}) #{}))
+(is (= (__ 2 #{0 1 2}) #{#{0 1} #{0 2} #{1 2}}))
+(is (= (__ 3 #{0 1 2 3 4}) #{#{0 1 2} #{0 1 3} #{0 1 4} #{0 2 3} #{0 2 4}
+                                     #{0 3 4} #{1 2 3} #{1 2 4} #{1 3 4} #{2 3 4}}))
+(is (= (__ 4 #{[1 2 3] :a "abc" "efg"}) #{#{[1 2 3] :a "abc" "efg"}}))
+(is (= (__ 2 #{[1 2 3] :a "abc" "efg"}) #{#{[1 2 3] :a} #{[1 2 3] "abc"} #{[1 2 3] "efg"}
+                                                  #{:a "abc"} #{:a "efg"} #{"abc" "efg"}})))))

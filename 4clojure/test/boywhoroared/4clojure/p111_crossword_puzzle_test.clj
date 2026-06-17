@@ -1,19 +1,59 @@
 (ns
- ^{:difficulty "hard", :tags ["game"], :description "Write a function that takes a string\nand a partially-filled crossword puzzle board,\nand determines if the input string\ncan be legally placed onto the board.\n\nThe crossword puzzle board consists of\na collection of partially-filled rows.\nEmpty spaces are denoted with an underscore (_),\nunusable spaces are denoted with a hash symbol (#),\nand pre-filled spaces have a character in place;\nthe whitespace characters are for legibility and should be ignored.\n\nFor a word to be legally placed on the board:\n\nIt may use empty spaces (underscores)\nIt may use but must not conflict with any pre-filled characters.\nIt must not use any unusable spaces (hashes).\nThere must be no empty spaces (underscores) or extra characters\nbefore or after the word (the word may be\nbound by unusable spaces though).\nCharacters are not case-sensitive.\nWords may be placed vertically (proceeding top-down only),\nor horizontally (proceeding left-right only)."} boywhoroared.4clojure.p111-crossword-puzzle-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 111 :difficulty "hard" :tags ["game"] :description "Write a function that takes a string
+and a partially-filled crossword puzzle board,
+and determines if the input string
+can be legally placed onto the board.
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+The crossword puzzle board consists of
+a collection of partially-filled rows.
+Empty spaces are denoted with an underscore (_),
+unusable spaces are denoted with a hash symbol (#),
+and pre-filled spaces have a character in place;
+the whitespace characters are for legibility and should be ignored.
 
-(deftest
- problem-111-test
- (testing
-  "Problem 111: Write a function that takes a string\nand a partially-filled crossword puzzle board,\nand determines if the input string\ncan be legally placed onto the board.\n\nThe crossword puzzle board consists of\na collection of partially-filled rows.\nEmpty spaces are denoted with an underscore (_),\nunusable spaces are denoted with a hash symbol (#),\nand pre-filled spaces have a character in place;\nthe whitespace characters are for legibility and should be ignored.\n\nFor a word to be legally placed on the board:\n\nIt may use empty spaces (underscores)\nIt may use but must not conflict with any pre-filled characters.\nIt must not use any unusable spaces (hashes).\nThere must be no empty spaces (underscores) or extra characters\nbefore or after the word (the word may be\nbound by unusable spaces though).\nCharacters are not case-sensitive.\nWords may be placed vertically (proceeding top-down only),\nor horizontally (proceeding left-right only)."
-  (is (= true (__ "the" ["_ # _ _ e"])))
-  (is (= false (__ "the" ["c _ _ _" "d _ # e" "r y _ _"])))
-  (is (= true (__ "joy" ["c _ _ _" "d _ # e" "r y _ _"])))
-  (is (= false (__ "joy" ["c o n j" "_ _ y _" "r _ _ #"])))
-  (is
-   (=
-    true
-    (__ "clojure" ["_ _ _ # j o y" "_ _ o _ _ _ _" "_ _ f _ # _ _"])))))
+For a word to be legally placed on the board:
 
+It may use empty spaces (underscores)
+It may use but must not conflict with any pre-filled characters.
+It must not use any unusable spaces (hashes).
+There must be no empty spaces (underscores) or extra characters
+before or after the word (the word may be
+bound by unusable spaces though).
+Characters are not case-sensitive.
+Words may be placed vertically (proceeding top-down only),
+or horizontally (proceeding left-right only)."} boywhoroared.4clojure.p111-crossword-puzzle-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
+
+(defn __ [& args] (comment "Write your solution in this fn"))
+
+(deftest problem-111-test
+     (testing "Problem 111: Write a function that takes a string
+and a partially-filled crossword puzzle board,
+and determines if the input string
+can be legally placed onto the board.
+
+The crossword puzzle board consists of
+a collection of partially-filled rows.
+Empty spaces are denoted with an underscore (_),
+unusable spaces are denoted with a hash symbol (#),
+and pre-filled spaces have a character in place;
+the whitespace characters are for legibility and should be ignored.
+
+For a word to be legally placed on the board:
+
+It may use empty spaces (underscores)
+It may use but must not conflict with any pre-filled characters.
+It must not use any unusable spaces (hashes).
+There must be no empty spaces (underscores) or extra characters
+before or after the word (the word may be
+bound by unusable spaces though).
+Characters are not case-sensitive.
+Words may be placed vertically (proceeding top-down only),
+or horizontally (proceeding left-right only)."
+       (is (= true  (__ "the" ["_ # _ _ e"])))
+(is (= false (__ "the" ["c _ _ _"                    "d _ # e"                    "r y _ _"])))
+(is (= true  (__ "joy" ["c _ _ _"                    "d _ # e"                    "r y _ _"])))
+(is (= false (__ "joy" ["c o n j"                    "_ _ y _"                    "r _ _ #"])))
+(is (= true  (__ "clojure" ["_ _ _ # j o y"
+                                          "_ _ o _ _ _ _"
+                                           "_ _ f _ # _ _"])))))

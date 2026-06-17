@@ -1,12 +1,17 @@
 (ns
- ^{:difficulty "elementary", :tags [], :description "The map function takes two arguments:\na function (f) and a sequence (s).\nMap returns a new sequence consisting of\nthe result of applying f to each item of s.\nDo not confuse the map function with the map data structure."} boywhoroared.4clojure.p17-map-test
- (:require [clojure.test :refer [deftest is testing]]))
+ ^{:id 17 :difficulty "elementary" :tags [] :description "The map function takes two arguments:
+a function (f) and a sequence (s).
+Map returns a new sequence consisting of
+the result of applying f to each item of s.
+Do not confuse the map function with the map data structure."} boywhoroared.4clojure.p17-map-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+(def __ (comment "Write the solution value here"))
 
-(deftest
- problem-17-test
- (testing
-  "Problem 17: The map function takes two arguments:\na function (f) and a sequence (s).\nMap returns a new sequence consisting of\nthe result of applying f to each item of s.\nDo not confuse the map function with the map data structure."
-  (is (= __ (map (fn* [p1__185#] (+ p1__185# 5)) '(1 2 3))))))
-
+(deftest problem-17-test
+  (testing "Problem 17: The map function takes two arguments:
+a function (f) and a sequence (s).
+Map returns a new sequence consisting of
+the result of applying f to each item of s.
+Do not confuse the map function with the map data structure."
+    (is (= __ (map #(+ % 5) '(1 2 3))))))

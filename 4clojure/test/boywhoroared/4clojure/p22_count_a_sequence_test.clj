@@ -1,16 +1,15 @@
 (ns
- ^{:difficulty "easy", :tags ["seqs" "core-functions"], :description "Write a function which returns\nthe total number of elements in a sequence."} boywhoroared.4clojure.p22-count-a-sequence-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 22 :difficulty "easy" :tags ["seqs" "core-functions"] :description "Write a function which returns
+the total number of elements in a sequence."} boywhoroared.4clojure.p22-count-a-sequence-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution in this fn"))
 
-(deftest
- problem-22-test
- (testing
-  "Problem 22: Write a function which returns\nthe total number of elements in a sequence."
-  (is (= (__ '(1 2 3 3 1)) 5))
-  (is (= (__ "Hello World") 11))
-  (is (= (__ [[1 2] [3 4] [5 6]]) 3))
-  (is (= (__ '(13)) 1))
-  (is (= (__ '(:a :b :c)) 3))))
-
+(deftest problem-22-test
+     (testing "Problem 22: Write a function which returns
+the total number of elements in a sequence."
+       (is (= (__ '(1 2 3 3 1)) 5))
+(is (= (__ "Hello World") 11))
+(is (= (__ [[1 2] [3 4] [5 6]]) 3))
+(is (= (__ '(13)) 1))
+(is (= (__ '(:a :b :c)) 3))))

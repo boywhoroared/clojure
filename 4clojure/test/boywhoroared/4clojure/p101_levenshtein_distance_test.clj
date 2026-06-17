@@ -1,20 +1,37 @@
 (ns
- ^{:difficulty "hard", :tags ["seqs"], :description "Given two sequences x and y,\ncalculate the Levenshtein distance of x and y,\ni. e. the minimum number of edits needed to transform x into y.\nThe allowed edits are:\n\n- insert a single item\n- delete a single item\n- replace a single item with another item\n\nWARNING: Some of the test cases may timeout\nif you write an inefficient solution!"} boywhoroared.4clojure.p101-levenshtein-distance-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 101 :difficulty "hard" :tags ["seqs"] :description "Given two sequences x and y,
+calculate the Levenshtein distance of x and y,
+i. e. the minimum number of edits needed to transform x into y.
+The allowed edits are:
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+- insert a single item
+- delete a single item
+- replace a single item with another item
 
-(deftest
- problem-101-test
- (testing
-  "Problem 101: Given two sequences x and y,\ncalculate the Levenshtein distance of x and y,\ni. e. the minimum number of edits needed to transform x into y.\nThe allowed edits are:\n\n- insert a single item\n- delete a single item\n- replace a single item with another item\n\nWARNING: Some of the test cases may timeout\nif you write an inefficient solution!"
-  (is (= (__ "kitten" "sitting") 3))
-  (is (= (__ "closure" "clojure") (__ "clojure" "closure") 1))
-  (is (= (__ "xyx" "xyyyx") 2))
-  (is (= (__ "" "123456") 6))
-  (is (= (__ "Clojure" "Clojure") (__ "" "") (__ [] []) 0))
-  (is (= (__ [1 2 3 4] [0 2 3 4 5]) 2))
-  (is (= (__ '(:a :b :c :d) '(:a :d)) 2))
-  (is (= (__ "ttttattttctg" "tcaaccctaccat") 10))
-  (is (= (__ "gaattctaatctc" "caaacaaaaaattt") 9))))
+WARNING: Some of the test cases may timeout
+if you write an inefficient solution!"} boywhoroared.4clojure.p101-levenshtein-distance-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
+(def __ (comment "Write the solution value here"))
+
+(deftest problem-101-test
+     (testing "Problem 101: Given two sequences x and y,
+calculate the Levenshtein distance of x and y,
+i. e. the minimum number of edits needed to transform x into y.
+The allowed edits are:
+
+- insert a single item
+- delete a single item
+- replace a single item with another item
+
+WARNING: Some of the test cases may timeout
+if you write an inefficient solution!"
+       (is (= (__ "kitten" "sitting") 3))
+(is (= (__ "closure" "clojure") (__ "clojure" "closure") 1))
+(is (= (__ "xyx" "xyyyx") 2))
+(is (= (__ "" "123456") 6))
+(is (= (__ "Clojure" "Clojure") (__ "" "") (__ [] []) 0))
+(is (= (__ [1 2 3 4] [0 2 3 4 5]) 2))
+(is (= (__ '(:a :b :c :d) '(:a :d)) 2))
+(is (= (__ "ttttattttctg" "tcaaccctaccat") 10))
+(is (= (__ "gaattctaatctc" "caaacaaaaaattt") 9))))

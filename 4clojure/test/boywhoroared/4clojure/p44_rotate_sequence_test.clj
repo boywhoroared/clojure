@@ -1,16 +1,15 @@
 (ns
- ^{:difficulty "medium", :tags ["seqs"], :description "Write a function which\ncan rotate a sequence in either direction."} boywhoroared.4clojure.p44-rotate-sequence-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 44 :difficulty "medium" :tags ["seqs"] :description "Write a function which
+can rotate a sequence in either direction."} boywhoroared.4clojure.p44-rotate-sequence-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution in this fn"))
 
-(deftest
- problem-44-test
- (testing
-  "Problem 44: Write a function which\ncan rotate a sequence in either direction."
-  (is (= (__ 2 [1 2 3 4 5]) '(3 4 5 1 2)))
-  (is (= (__ -2 [1 2 3 4 5]) '(4 5 1 2 3)))
-  (is (= (__ 6 [1 2 3 4 5]) '(2 3 4 5 1)))
-  (is (= (__ 1 '(:a :b :c)) '(:b :c :a)))
-  (is (= (__ -4 '(:a :b :c)) '(:c :a :b)))))
-
+(deftest problem-44-test
+     (testing "Problem 44: Write a function which
+can rotate a sequence in either direction."
+       (is (= (__ 2 [1 2 3 4 5]) '(3 4 5 1 2)))
+(is (= (__ -2 [1 2 3 4 5]) '(4 5 1 2 3)))
+(is (= (__ 6 [1 2 3 4 5]) '(2 3 4 5 1)))
+(is (= (__ 1 '(:a :b :c)) '(:b :c :a)))
+(is (= (__ -4 '(:a :b :c)) '(:c :a :b)))))
