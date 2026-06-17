@@ -1,15 +1,12 @@
 (ns
- ^{:difficulty "elementary", :tags [], :description "Write a function which doubles a number."} boywhoroared.4clojure.p15-double-down-test
- (:require [clojure.test :refer [deftest is testing]]))
+  ^{:id 15 :difficulty "elementary" :tags [] :description "Write a function which doubles a number."} boywhoroared.4clojure.p15-double-down-test
+  (:require [clojure.test :refer [deftest is testing run-tests]]))
 
-(defn __ [& args] (comment "Write your solution inside this function"))
+(defn __ [& args] (comment "Write your solution in this fn"))
 
-(deftest
- problem-15-test
- (testing
-  "Problem 15: Write a function which doubles a number."
-  (is (= (__ 2) 4))
-  (is (= (__ 3) 6))
-  (is (= (__ 11) 22))
-  (is (= (__ 7) 14))))
-
+(deftest problem-15-test
+     (testing "Problem 15: Write a function which doubles a number."
+       (is (= (__ 2) 4))
+(is (= (__ 3) 6))
+(is (= (__ 11) 22))
+(is (= (__ 7) 14))))
